@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11-sinf Fizika Darsligi</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #2980b9;
+            --accent: #1abc9c;
+            --bg: #f4f4f9;
+            --card-bg: #ffffff;
+            --text: #333333;
+            --border: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .nav-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .nav-card h2 {
+            margin-top: 0;
+            color: var(--primary);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .topics-grid li {
+            background: #f8f9fa;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .topics-grid li:hover {
+            transform: translateY(-3px);
+            border-color: var(--secondary);
+            box-shadow: 0 6px 15px rgba(41, 128, 185, 0.15);
+        }
+
+        .topics-grid a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .topic-section {
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            display: none; /* JavaScript orqali boshqariladi yoki hammasi chiqadi */
+        }
+
+        .topic-section.active {
+            display: block;
+        }
+
+        .topic-section h2 {
+            color: var(--primary);
+            margin-top: 0;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 10px;
+        }
+
+        .topic-section h3 {
+            color: var(--secondary);
+            margin-top: 25px;
+        }
+
+        .formula-box {
+            background: #eef2f7;
+            border-left: 4px solid var(--secondary);
+            padding: 15px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 1.1rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 8px 16px;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn-back:hover {
+            background: var(--primary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Tabs yoki sahifalash uchun sodda holat */
+        .all-topics-view .topic-section {
+            display: block;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>11-sinf Fizika Darsligi</h1>
+        <p>Asosiy mavzular, qonunlar, formulalar va batafsil tushuntirishlar</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Mundarija qismi -->
+        <div class="nav-card" id="index-view">
+            <h2>Mundarija (Barcha mavzular)</h2>
+            <p>O'rganishni istagan mavzuyingizni tanlang:</p>
+            <ul class="topics-grid">
+                <li><a href="#mavzu-1">1. Elektr zaryadlari va Kulon qonuni</a></li>
+                <li><a href="#mavzu-2">2. Elektr maydoni va uning kuchlanishi</a></li>
+                <li><a href="#mavzu-3">3. O'zgarmas elektr toki qonunlari</a></li>
+                <li><a href="#mavzu-4">4. Magnit maydoni va Amper kuchi</a></li>
+                <li><a href="#mavzu-5">5. Elektromagnit induksiya hodisasi</a></li>
+                <li><a href="#mavzu-6">6. O'zgaruvchan tok va uning xossalari</a></li>
+                <li><a href="#mavzu-7">7. Mexanik tebranishlar va to'lqinlar</a></li>
+                <li><a href="#mavzu-8">8. Elektromagnit tebranishlar va to'lqinlar</a></li>
+                <li><a href="#mavzu-9">9. Geometrik va to'lqin optikasi</a></li>
+                <li><a href="#mavzu-11">11. Kvant fizikasi va fotoeffekt</a></li>
+            </ul>
+        </div>
+
+        <!-- Mavzular ro'yxati (Barchasi bitta sahifada mukammal ko'rinishda) -->
+        <div class="all-topics-view">
+
+            <!-- Mavzu 1 -->
+            <div id="mavzu-1" class="topic-section">
+                <a href="#index-view" class="btn-back">&uarr; Mundarijaga qaytish</a>
+                <h2>1-mavzu: Elektr zaryadlari va Kulon qonuni</h2>
+                <h3>Elektr zaryadi va saqlanish qonuni</h3>
+                <p>Jism va zarralarning bir-biri bilan elektromagnit o'zaro ta'sirda bo'lish xususiyatini belgilaydigan fizik kattalik. Tabiatda musbat (+) va manfiy (-) zaryadlar mavjud. Yopiq tizimda zaryadlar yig'indisi doimiy qoladi:</p>
+                <div class="formula-box">q_1 + q_2 + ... + q_n = \text{const}</div>
+                
+                <h3>Kulon qonuni</h3>
+                <p>Vakuumda joylashgan ikki qo'zg'almas nuqtaviy zaryadning o'zaro ta'sir kuchi ularning miqdorlari ko'paytmasiga to'g'ri, orasidagi masofa kvadratiga teskari proporsional:</p>
+                <div class="formula-box">F = k \cdot \frac{|q_1 \cdot q_2|}{r^2}</div>
+            </div>
+
+            <!-- Mavzu 2 -->
+            <div id="mavzu-2" class="topic-section">
+                <a href="#index-view" class="btn-back">&uarr; Mundarijaga qaytish</a>
+                <h2>2-mavzu: Elektr maydoni va uning kuchlanishi</h2>
+                <h3>Elektr maydon kuchlanishi</h3>
+                <p>Maydonning berilgan nuqtasiga keltirilgan sinov zaryadiga ta'sir etuvchi kuchning shu zaryad miqdoriga nisbati:</p>
+                <div class="formula-box">E = \frac{F}{q}</div>
+                <p>Superpozitsiya prinsipiga ko'ra, natijaviy kuchlanish alohida zaryadlar hosil qilgan kuchlanishlar yig'indisiga teng.</p>
+            </div>
+
+            <!-- Mavzu 3 -->
+            <div id="mavzu-3" class="topic-section">
+                <a href="#index-view" class="btn-back">&uarr; Mundarijaga qaytish</a>
+                <h2>3-mavzu: O'zgarmas elektr toki qonunlari</h2>
+                <h3>Om qonuni va qarshilik</h3>
+                <p>Zanjirning bir qismi uchun Om qonuni tok kuchining kuchlanishga bog'liqligini ifodalaydi:</p>
+                <div class="formula-box">I = \frac{U}{R}, \quad R = \rho \cdot \frac{l}{S}</div>
+            </div>
+
+            <!-- Mavzu 4 -->
+            <div id="mavzu-4" class="topic-section">
+                <a href="#index-view" class="btn-back">&uarr; Mundarijaga qaytish</a>
+                <h2>4-mavzu: Magnit maydoni va Amper kuchi</h2>
+                <h3>Amper kuchi</h3>
+                <p>Magnit maydonida joylashgan tokli o'tkazgichga ta'sir qiluvchi kuch:</p>
+                <div class="formula-box">F_A = I \cdot B \cdot L \cdot \sin\alpha</div>
+            </div>
+
+            <!-- Mavzu 5 -->
+            <div id="mavzu-5" class="topic-section">
+                <a href="#index-view" class="btn-back">&uarr; Mundarijaga qaytish</a>
+                <h2>5-mavzu: Elektromagnit induksiya hodisasi</h2>
+                <h3>Faradey qonuni va Lens qoidasi</h3>
+                <p>Konturda hosil bo'ladigan induksiya EYUKi magnit oqimining o'zgarish tezligiga teng:</p>
+                <div class="formula-box">\mathcal{E}_i = -\frac{\Delta \Phi}{\Delta t}</div>
+            </div>
+
+            <!-- Mavzu 6 -->
+            <div id="mavzu-6" class="topic-section">
+                <a href="#index-view" class="btn-back">&uarr; Mundarijaga qaytish</a>
+                <h2>6-mavzu: O'zgaruvchan tok va uning xossalari</h2>
+                <h3>O'zgaruvchan tok va transformator</h3>
+                <p>Kattaligi va yo'nalishi davriy ravishda o'zgarib turadigan tok. Transformator koeffitsienti:</p>
+                <div class="formula-box">k = \frac{U_1}{U_2} \approx \frac{N_1}{N_2}</div>
+            </div>
+
+            <!-- Mavzu 7 -->
+            <div id="mavzu-7" class="topic-section">
+                <a href="#index-view" class="btn-back">&uarr; Mundarijaga qaytish</a>
+                <h2>7-mavzu: Mexanik tebranishlar va to'lqinlar</h2>
+                <h3>Tebranishlar va to'lqin uzunligi</h3>
+                <p>Matematik mayatnik tebranish davri hamda to'lqin uzunligi formulasi:</p>
+                <div class="formula-box">T = 2\pi \sqrt{\frac{l}{g}}, \quad \lambda = v \cdot T</div>
+            </div>
+
+            <!-- Mavzu 8 -->
+            <div id="mavzu-8" class="topic-section">
+                <a href="#index-view" class="btn-back">&uarr; Mundarijaga qaytish</a>
+                <h2>8-mavzu: Elektromagnit tebranishlar va to'lqinlar</h2>
+                <h3>Tomson formulasi</h3>
+                <p>Tebranish konturidagi elektromagnit tebranishlar davri:</p>
+                <div class="formula-box">T = 2\pi \sqrt{L \cdot C}</div>
+            </div>
+
+            <!-- Mavzu 9 -->
+            <div id="mavzu-9" class="topic-section">
+                <a href="#index-view" class="btn-back">&uarr; Mundarijaga qaytish</a>
+                <h2>9-mavzu: Geometrik va to'lqin optikasi</h2>
+                <h3>Optika qonunlari</h3>
+                <p>Diffraksiyaviy panjara asosiy formulasi:</p>
+                <div class="formula-box">d \cdot \sin\varphi = k \cdot \lambda</div>
+            </div>
+
+            <!-- Mavzu 11 -->
+            <div id="mavzu-11" class="topic-section">
+                <a href="#index-view" class="btn-back">&uarr; Mundarijaga qaytish</a>
+                <h2>11-mavzu: Kvant fizikasi va fotoeffekt</h2>
+                <h3>Aynshteynning fotoeffekt tenglamasi</h3>
+                <p>Yorug'lik ta'sirida moddadan elektronlar ajralib chiqish qonuni:</p>
+                <div class="formula-box">h\nu = A_{chiq} + \frac{m v^2}{2}</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 11-sinf Fizika Darsligi. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+</body>
+</html>
